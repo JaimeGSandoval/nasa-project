@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
       - name: Use MongoDB from GitHub actions
+        env:
+          CI: true
         uses: supercharge/mongodb-github-action@1.8.0
         with:
           mongodb-version: ${{matrix.mongodb-version}}
