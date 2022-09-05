@@ -9,6 +9,10 @@ describe('Planets API', () => {
     await loadPlanetsData();
   });
 
+  afterAll(async () => {
+    await mongoDisconnect();
+  });
+
   describe('GET /v1/planets', () => {
     test('Should respond with 200 success', async () => {
       const response = await request(app)
